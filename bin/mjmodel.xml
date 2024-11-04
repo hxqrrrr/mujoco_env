@@ -1,0 +1,92 @@
+<mujoco model="MuJoCo Model">
+  <compiler angle="radian"/>
+  <option density="1.204" viscosity="1.8e-05" integrator="implicit"/>
+  <visual>
+    <global elevation="-10"/>
+  </visual>
+  <default class="main">
+    <geom friction="0.2"/>
+    <tendon limited="true" rgba="1 1 1 1"/>
+    <default class="weight">
+      <geom rgba="0.8 0.4 0.8 1"/>
+      <site rgba="0.8 0.4 0.8 1"/>
+    </default>
+    <default class="balloon">
+      <geom fluidshape="ellipsoid" density="0.167"/>
+      <default class="pink">
+        <geom rgba="1 0.6 0.7 1"/>
+        <site rgba="1 0.6 0.7 1"/>
+      </default>
+      <default class="blue">
+        <geom rgba="0.3 0.7 0.9 1"/>
+        <site rgba="0.3 0.7 0.9 1"/>
+      </default>
+      <default class="green">
+        <geom rgba="0.4 0.9 0.5 1"/>
+        <site rgba="0.4 0.9 0.5 1"/>
+      </default>
+      <default class="orange">
+        <geom rgba="1 0.4 0 1"/>
+        <site rgba="1 0.4 0 1"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="grid" builtin="checker" rgb1="1 1 1" rgb2="0 0 0" width="512" height="512"/>
+    <material name="grid" texture="grid" texuniform="true" texrepeat="2 2" reflectance="0.6"/>
+  </asset>
+  <worldbody>
+    <geom name="ground" size="5 5 0.05" pos="0 0 -0.5" type="plane" material="grid"/>
+    <geom name="ramp" size="0.4 0.2 0.03" pos="0 0 -0.4" quat="0.984808 0 0.173648 0" type="box" rgba="1 1 1 1"/>
+    <body name="weight" childclass="weight" pos="0.3 0 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom name="weight" size="0.015 0.015 0.015" type="box" mass="0.0347"/>
+      <site name="weight1" pos="0.013 0.013 0.013"/>
+      <site name="weight2" pos="-0.013 -0.013 0.013"/>
+      <light pos="1 0 3" dir="-0.316228 0 -0.948683" mode="trackcom"/>
+      <light pos="-1 0 3" dir="0.316228 0 -0.948683" mode="trackcom"/>
+    </body>
+    <body name="pink" childclass="pink" pos="-0.2 0.1 0.2" gravcomp="7.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom name="pink" size="0.11 0.11 0.15" type="ellipsoid"/>
+      <geom name="pink_knot" size="0.02" pos="0 0 -0.15"/>
+      <site name="pink" pos="0 0 -0.17" size="0.01"/>
+    </body>
+    <body name="blue" childclass="blue" pos="0.1 0.1 0.2" gravcomp="7.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom name="blue" size="0.12 0.12 0.15" type="ellipsoid"/>
+      <geom name="blue_knot" size="0.02" pos="0 0 -0.15"/>
+      <site name="blue" pos="0 0 -0.17" size="0.01"/>
+    </body>
+    <body name="green" childclass="green" pos="0.1 -0.1 0.2" gravcomp="7.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom name="green" size="0.12 0.12 0.14" type="ellipsoid"/>
+      <geom name="green_knot" size="0.02" pos="0 0 -0.14"/>
+      <site name="green" pos="0 0 -0.16" size="0.01"/>
+    </body>
+    <body name="orange" childclass="orange" pos="-0.12 -0.12 0.2" gravcomp="7.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom name="orange" size="0.12 0.12 0.13" type="ellipsoid"/>
+      <geom name="orange_knot" size="0.02" pos="0 0 -0.13"/>
+      <site name="orange" pos="0 0 -0.15" size="0.01"/>
+    </body>
+  </worldbody>
+  <tendon>
+    <spatial range="0 0.6">
+      <site site="pink"/>
+      <site site="weight1"/>
+    </spatial>
+    <spatial range="0 0.4">
+      <site site="blue"/>
+      <site site="weight1"/>
+    </spatial>
+    <spatial range="0 0.3">
+      <site site="green"/>
+      <site site="weight2"/>
+    </spatial>
+    <spatial range="0 0.5">
+      <site site="orange"/>
+      <site site="weight2"/>
+    </spatial>
+  </tendon>
+</mujoco>
