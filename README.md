@@ -1,6 +1,7 @@
 # mujoco_env
 
 #### 使用方法
+克隆此仓库
 pip install mujoco
 #### 文档介绍
 
