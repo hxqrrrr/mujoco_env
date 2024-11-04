@@ -1,5 +1,7 @@
 # mujoco_env
 
+#### 使用方法
+pip install mujoco
 #### 文档介绍
 
 template文件夹里保存了py代码初始模板
