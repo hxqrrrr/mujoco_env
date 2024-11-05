@@ -23,6 +23,8 @@ mujoco文档：https://mujoco.readthedocs.io/en/stable/python.html#
 
 mujoco简单使用方法视频：https://www.youtube.com/watch?v=I5QvXfo8L4o&list=PLc7bpbeTIk75dgBVd07z6_uKN1KQkwFRK&index=11
 
+和lerobot结合：https://github.com/perezjln/gym-lowcostrobot
+
 **others：**
 
 gazebosim：https://gazebosim.org/home
