@@ -1,4 +1,7 @@
-!pip install mujoco
+#两轮小车测试代码
+#直接在终端即可运行
+#需要安装mujoco库
+#pip install mujoco
 import mujoco as mj
 from mujoco.glfw import glfw
 import numpy as np
@@ -6,11 +9,11 @@ import os
 from scipy.spatial.transform import Rotation as R
 
 xml_path = 'diff_car.xml' #xml file (assumes this is in the same folder as this file)
-simend = 10 #simulation time
-print_camera_config = 0 #set to 1 to print camera config
+simend = 100 #simulation time
+print_camera_config = 1 #set to 1 to print camera config
                         #this is useful for initializing view of the model)
 
-# For callback functions
+# 鼠标回调参数初始化
 button_left = False
 button_middle = False
 button_right = False
@@ -106,36 +109,36 @@ def scroll(window, xoffset, yoffset):
     mj.mjv_moveCamera(model, action, 0.0, -0.05 *
                       yoffset, scene, cam)
 
-#get the full path
+#得到当前文件的绝对路径
 dirname = os.path.dirname(__file__)
 abspath = os.path.join(dirname + "/" + xml_path)
 xml_path = abspath
 
-# MuJoCo data structures
+# 配置MuJoCo数据结构
 model = mj.MjModel.from_xml_path(xml_path)  # MuJoCo model
 data = mj.MjData(model)                # MuJoCo data
 cam = mj.MjvCamera()                        # Abstract camera
 opt = mj.MjvOption()                        # visualization options
 
-# Init GLFW, create window, make OpenGL context current, request v-sync
+# 创建窗口并初始化OpenGL
 glfw.init()
 window = glfw.create_window(1200, 900, "Demo", None, None)
 glfw.make_context_current(window)
 glfw.swap_interval(1)
 
-# initialize visualization data structures
+# 初始化场景、摄像机、选项、上下文
 mj.mjv_defaultCamera(cam)
 mj.mjv_defaultOption(opt)
 scene = mj.MjvScene(model, maxgeom=10000)
 context = mj.MjrContext(model, mj.mjtFontScale.mjFONTSCALE_150.value)
 
-# install GLFW mouse and keyboard callbacks
+# 鼠标交互初始化
 glfw.set_key_callback(window, keyboard)
 glfw.set_cursor_pos_callback(window, mouse_move)
 glfw.set_mouse_button_callback(window, mouse_button)
 glfw.set_scroll_callback(window, scroll)
 
-# Example on how to set camera configuration
+# 相机参数初始化
 cam.azimuth = 90
 cam.elevation = -45
 cam.distance = 20
@@ -147,6 +150,9 @@ init_controller(model,data)
 #set the controller
 mj.set_mjcb_control(controller)
 
+
+# Run simulation loop
+# 仿真主循环
 while not glfw.window_should_close(window):
     time_prev = data.time
 
