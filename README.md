@@ -3,9 +3,10 @@
 #### 使用方法
 克隆此仓库\
 pip install mujoco
+
 #### 文档介绍
 
-[scripts文件夹](.\scripts)包含mujoco简单使用方法
+[scripts文件夹](https://github.com/hxqrrrr/mujoco_env/tree/main/scripts)包含mujoco简单使用方法
 
 ------
 
