@@ -5,11 +5,7 @@
 pip install mujoco
 #### 文档介绍
 
-template文件夹里保存了py代码初始模板，diff_car.py是两轮小车的仿真代码，适合作为首次使用py模板的参考。
-
-trossen_vx300s文件夹中保存了vx300s.xml和vx300s.py,control.py。control.py用于实现vx300s机械臂的初始化。vx300s.py是模板文件。后缀xml表示文件包含仿真模型参数。
-
-[vx300s](https://github.com/google-deepmind/mujoco_menagerie/tree/main/trossen_vx300s)是由Trossen Robotics开发的[ViperX 300 6DOF](https://www.trossenrobotics.com/viperx-300-robot-arm-6dof.aspx)的简化机器人描述 (MJCF) 。
+[scripts文件夹](.\scripts)包含mujoco简单使用方法
 
 ------
 
@@ -23,7 +19,7 @@ mujoco文档：https://mujoco.readthedocs.io/en/stable/python.html#
 
 mujoco简单使用方法视频：https://www.youtube.com/watch?v=I5QvXfo8L4o&list=PLc7bpbeTIk75dgBVd07z6_uKN1KQkwFRK&index=11
 
-和lerobot结合：https://github.com/perezjln/gym-lowcostrobot
+gym _lowcostrobot：https://github.com/perezjln/gym-lowcostrobot
 
 **others：**
 
