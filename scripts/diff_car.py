@@ -151,6 +151,49 @@ init_controller(model,data)
 mj.set_mjcb_control(controller)
 
 
+
+
+
+
+
+
+# # 获取摄像头的索引  
+# camera_name = "my_camera"  
+# camera_id = -1  
+# for i in range(model.ncam):  
+#     if mj.mj_id2name(model, mj.mjtObj.mjOBJ_CAMERA, i) == camera_name:  
+#         print(f"找到了摄像头 '{camera_name}', 索引为 {i}.")  
+#         camera_id = i  
+#         break  
+
+# if camera_id == -1:  
+#     print(f"在模型中找不到摄像头 '{camera_name}'.")  
+#     exit(1)  
+
+# # 获取摄像头的位置和方向  
+# camera_pos = model.cam_pos[camera_id * 3:(camera_id + 1) * 3]  
+# camera_mat = model.cam_mat0[camera_id * 9:(camera_id + 1) * 9]  
+
+# # 渲染摄像头图像  
+# img = np.zeros((480, 640, 3), dtype=np.uint8)  
+# # mj.mjr_render(model, data)  
+# # mj.mjr_readPixels(img, model, data, camera_id)  
+
+# # 使用OpenCV显示图像  
+# import cv2  
+# print(f"图像大小: 640x480")  
+# cv2.imshow("MuJoCo 摄像头", img)  
+# cv2.waitKey(0)  
+# cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
 # Run simulation loop
 # 仿真主循环
 while not glfw.window_should_close(window):
