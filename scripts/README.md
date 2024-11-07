@@ -22,5 +22,5 @@ mujoco主要有三个部分，**模型模板(.xml)、包(pip)、代码模板(.py
 
 #### **TODO：**
 
-- [ ] 将[gym _lowcostrobot仓库](https://github.com/perezjln/gym-lowcostrobot)中和[mujoco相关样例](https://github.com/perezjln/gym-lowcostrobot/tree/main/examples)移植到该仓库跑通
-- [ ] 将[gym _lowcostrobot仓库](https://github.com/perezjln/gym-lowcostrobot)中和[lerobot相关样例](https://github.com/perezjln/gym-lowcostrobot/tree/main/examples)移植到该仓库跑通
+- [ ] 将[gym _lowcostrobot仓库](https://github.com/perezjln/gym-lowcostrobot)中的[mujoco相关样例](https://github.com/perezjln/gym-lowcostrobot/tree/main/examples)移植到该仓库跑通
+- [ ] 将[gym _lowcostrobot仓库](https://github.com/perezjln/gym-lowcostrobot)中的[lerobot相关样例](https://github.com/perezjln/gym-lowcostrobot/tree/main/examples)移植到该仓库跑通
