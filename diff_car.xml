@@ -1,0 +1,8 @@
+<!-- 在 box 物体内添加第一个摄像头 -->
+<body name="box">
+    <!-- ... 其他 box 的定义 ... -->
+    <camera name="first_person" pos="0 0 0.2" xyaxes="1 0 0 0 1 0"/>
+</body>
+
+<!-- 添加第二个外部摄像头，修改 target 为实际的小车主体名称 -->
+<camera name="third_person" pos="2 2 2" mode="targetbody" target="chassis"/> 

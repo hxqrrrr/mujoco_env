@@ -15,7 +15,7 @@
                 <joint name="right_wheel" type="hinge" axis="0 0 -1" />  
                 <geom type="cylinder" size=".2 .05" rgba="0 .9 0 1"/>  
             </body>  
-            <camera name="my_camera" pos="0 0 0" xyaxes="1 0 0 0 1 0" />
+            <camera name="my_camera" pos="-2 0 1" xyaxes="0 -1 0 0 0 1" />
         </body>  
     </worldbody>  
     <sensor>  
