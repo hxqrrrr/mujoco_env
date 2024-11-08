@@ -8,11 +8,11 @@
 
 - template_mujoco.py是mujoco环境运行代码模板，diff_car.py是两轮小车的仿真代码，diff_car.xml包含全部小车参数，适合作为首次使用mujoco的参考。
 
-- camera.py实现向diff_car.xml文件添加<camera>,实现了摄像头的索引、渲染、显示
+- camera.py实现向diff_car.xml文件添加<camera>,实现了摄像头的索引、渲染、显示、跟随小车
 
   qustion：
 
-  1.摄像头的位置修改后，显示的视野不改变
+  1.摄像头的位置修改后，显示的视野不改变（已解决）
 
   2.某些位置不能设置摄像头，报错
 
